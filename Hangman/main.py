@@ -1,6 +1,6 @@
 import random
 
-def hangman():
+def run():
     word_list = ["python", "hangman", "programming", "computer", "science"]
     word = random.choice(word_list)
     word_length = len(word)
@@ -108,5 +108,3 @@ def hangman():
     if lives == 0:
         print(hangman_stages[lives])
         print("You lose! The word was:", word)
-
-hangman()

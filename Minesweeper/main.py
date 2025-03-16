@@ -157,7 +157,7 @@ class Board():
             i += 1
         return return_board
 
-def play():
+def run():
     board = Board(mines=7, rows=10, cols=10)
 
     # Step 2: show the user the board and ask for where they want to dig
@@ -190,4 +190,3 @@ def play():
         # let's reveal the whole board!
         board.print_board(board.background_board)
 
-play()

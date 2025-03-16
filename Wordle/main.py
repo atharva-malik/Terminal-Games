@@ -2332,30 +2332,31 @@ def print_word(guess, answer):
         return True
     return False
 
-while True:
-    answer = choice(all_combos)
-    for i in range(6):
-        while True:
-            user_guess = input("Guess the word: ")
-            if user_guess in all_combos:
+def run():
+    while True:
+        answer = choice(all_combos)
+        for i in range(6):
+            while True:
+                user_guess = input("Guess the word: ")
+                if user_guess in all_combos:
+                    break
+                elif len(user_guess) != 5:
+                    print(red("Not the correct length!", "bold"))
+                else:
+                    print(red("Not a valid word", "bold"))
+            win = print_word(user_guess, answer)
+            if win:
+                print(green("You win!"))
                 break
-            elif len(user_guess) != 5:
-                print(red("Not the correct length!", "bold"))
-            else:
-                print(red("Not a valid word", "bold"))
-        win = print_word(user_guess, answer)
         if win:
-            print(green("You win!"))
-            break
-    if win:
-        if input("Play again? (y/n) ").lower() == "y":
-            continue
+            if input("Play again? (y/n) ").lower() == "y":
+                continue
+            else:
+                break
         else:
-            break
-    else:
-        print(red("You lose!"))
-        print(red("The world was: "+answer))
-        if input("Play again? (y/n) ").lower() == "y":
-            continue
-        else:
-            break
+            print(red("You lose!"))
+            print(red("The world was: "+answer))
+            if input("Play again? (y/n) ").lower() == "y":
+                continue
+            else:
+                break

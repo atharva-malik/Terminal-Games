@@ -79,7 +79,7 @@ def find_best_move():
     return best_move
 
 # Main game loop
-def play_game():
+def run():
     print('Welcome to Tic Tac Toe!')
     print_board()
     while True:
@@ -105,5 +105,3 @@ def play_game():
             break
         
 
-# Start the game
-play_game()

@@ -116,7 +116,7 @@ def find_best_move():
                 best_move = i
     return best_move
 
-def main():
+def run():
     global board
     current_player = "X"
     while True:
@@ -152,6 +152,3 @@ def main():
                 print("It's a tie!")
                 break
             current_player = "O" if current_player == "X" else "X"
-
-if __name__ == "__main__":
-    main()
